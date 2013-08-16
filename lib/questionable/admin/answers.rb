@@ -2,7 +2,6 @@ if defined?(ActiveAdmin)
   ActiveAdmin.register Questionable::Answer, :as => 'Answers' do
     menu :label => 'Answers', :parent => 'Questionable'
 
-    filter :user_email, :as => :string
     filter :assignment_sources
     filter :created_at
     filter :updated_at
