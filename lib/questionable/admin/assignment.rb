@@ -1,9 +1,9 @@
 if defined?(ActiveAdmin)
-  ActiveAdmin.register Questionable::Assignment, :as => 'Assignments', :sort_order => 'source_type, source_id, position' do
+  ActiveAdmin.register Questionable::Assignment, :sort_order => 'source_type, source_id, position' do
     menu :label => 'Assignments', :parent => 'Questionable'
 
     index do 
-      column(:id) { |a| link_to a.id, admin_assignment_path(a.id) }
+      column(:id) { |a| link_to a.id, admin_questionable_assignment_path(a.id) }
       column(:subject) { |a| a.subject_id ? a.subject : a.subject_type }
       column :position
       column(:question) { |a| a.question.title }
